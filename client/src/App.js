@@ -1,12 +1,7 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <h1>Embifi</h1>
-    </div>
-  );
+export default function App() {
+  return(
+    <div className='App'>App</div>
+  )
 }
-
-export default App;
