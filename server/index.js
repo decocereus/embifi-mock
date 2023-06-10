@@ -3,7 +3,7 @@ import bodyParser  from "body-parser";
 import mongoose  from "mongoose";
 import cors from 'cors';
 
-import dashboardRoutes from './routes/dashboard.js';
+import dashboardRoutes from './routes/AppRoutes.js';
 
 const app = express();
 

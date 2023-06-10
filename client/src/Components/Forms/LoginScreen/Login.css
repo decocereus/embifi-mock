@@ -1,0 +1,172 @@
+.globalContainer {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  left: calc(50% - 1920px / 2);
+  top: 0px;
+  background: #f0f2f5;
+}
+
+.formBox {
+  position: absolute;
+  width: 396px;
+  height: 456px;
+  left: calc(50% - 396px / 2 - 19px);
+  top: calc(50% - 456px / 2 + 170px);
+}
+
+.embifiText {
+  position: absolute;
+  width: 396px;
+  height: 524px;
+  left: calc(50% - 410px / 2);
+  top: 0px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 128px;
+  line-height: 24px;
+
+  /* identical to box height, or 19% */
+  display: flex;
+  align-items: center;
+
+  color: #000000;
+}
+
+.formContainer {
+  position: absolute;
+  width: 396px;
+  height: 349.83px;
+  left: 0px;
+  top: 0px;
+
+  background: #ffffff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1), 0px 8px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.form {
+  position: absolute;
+  width: 396px;
+  height: 315.83px;
+  left: 0px;
+  top: 76px;
+}
+
+.emailPassContainer {
+  position: absolute;
+  width: 396px;
+  height: 132.08px;
+  left: 0px;
+  top: 0px;
+}
+
+.emailContainer {
+  box-sizing: border-box;
+
+  position: absolute;
+  width: 364px;
+  height: 52px;
+  left: calc(50% - 364px / 2);
+  top: calc(50% - 52px / 2 - 34.04px);
+  background: #ffffff;
+  border: 1px solid #1b74e4;
+  box-shadow: 0px 0px 0px 2px #e7f3ff;
+  border-radius: 6px;
+}
+
+.passwordContainer {
+  box-sizing: border-box;
+  position: absolute;
+  width: 364px;
+  height: 52px;
+  left: 16px;
+  top: 70px;
+
+  background: #ffffff;
+  border: 1px solid #dddfe2;
+  border-radius: 6px;
+}
+
+.emailPlaceholder {
+  position: absolute;
+  width: 330px;
+  height: 20px;
+  left: 17px;
+  top: 16px;
+}
+
+.passwordPlaceholder {
+  position: absolute;
+  width: 300px;
+  height: 20px;
+  left: 17px;
+  top: 16px;
+}
+
+.emailInput {
+  position: absolute;
+  width: 176.92px;
+  height: 19px;
+  left: 0px;
+  top: 0px;
+
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  color: #bec3c9;
+}
+
+.passwordInput {
+  position: absolute;
+  width: 74.84px;
+  height: 19px;
+  left: 0px;
+  top: 0px;
+
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  color: #90949c;
+}
+
+.button {
+  position: absolute;
+  width: 364px;
+  height: 48px;
+  left: calc(50% - 364px / 2);
+  top: calc(50% - 48px / 2 + 4.17px);
+
+  background: #1877f2;
+  border-radius: 6px;
+}
+
+.buttonText {
+  position: absolute;
+  width: 60.18px;
+  height: 22px;
+  left: 152px;
+  top: 13px;
+
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 48px;
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #ffffff;
+}
