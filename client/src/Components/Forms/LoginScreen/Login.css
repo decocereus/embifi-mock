@@ -77,6 +77,10 @@
   border-radius: 6px;
 }
 
+.emailContainer:hover {
+  border:2px solid rgb(124, 75, 238)
+}
+
 .passwordContainer {
   box-sizing: border-box;
   position: absolute;
@@ -86,8 +90,13 @@
   top: 70px;
 
   background: #ffffff;
-  border: 1px solid #dddfe2;
+  border: 1px solid #1b74e4;
+  box-shadow: 0px 0px 0px 2px #e7f3ff;
   border-radius: 6px;
+}
+
+.passwordContainer:hover {
+  border:2px solid rgb(124, 75, 238)
 }
 
 .emailPlaceholder {
@@ -108,8 +117,8 @@
 
 .emailInput {
   position: absolute;
-  width: 176.92px;
-  height: 19px;
+  width: 100%;
+  height: 100%;
   left: 0px;
   top: 0px;
 
@@ -125,8 +134,8 @@
 
 .passwordInput {
   position: absolute;
-  width: 74.84px;
-  height: 19px;
+  width: 100%;
+  height: 100%;
   left: 0px;
   top: 0px;
 
@@ -149,6 +158,10 @@
 
   background: #1877f2;
   border-radius: 6px;
+}
+
+.button:hover {
+  background:rgb(204, 107, 207)
 }
 
 .buttonText {

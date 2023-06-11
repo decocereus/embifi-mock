@@ -1,0 +1,139 @@
+
+
+.register {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 10px;
+  gap: 10px;
+
+  position: inherit;
+
+  width: 75px;
+  height: 44px;
+  left: 1515px;
+  top: 161px;
+
+  background: #abbeff;
+  border-radius: 8px;
+}
+
+.registerbtn {
+  width: 60px;
+  height: 24px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 24px;
+
+  /* identical to box height, or 160% */
+  display: flex;
+  align-items: center;
+
+  color: #000000;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.userDetailsContainer {
+  position: inherit;
+  width: 1258px;
+  height: 218px;
+  left: calc(50% - 1258px / 2 + 0.5px);
+  top: calc(50% - 118px / 2 - 29px);
+}
+
+.userDetailsTable {
+  box-sizing: border-box;
+
+  position: absolute;
+  width: 1258px;
+  height: 218px;
+  left: calc(50% - 1258px / 2 + 0.5px);
+  top: 248px;
+
+  border: 1px solid #cccccc;
+}
+
+.userDetailRow {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 11.5px 338.22px 11.5px 36px;
+
+  width: 1258px;
+  height: 47px;
+  background: #ffffff;
+  border-bottom: 1px solid #dddddd;
+}
+
+.headers {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 11.5px 338.22px 11.5px 36px;
+
+  width: 1258px;
+  height: 47px;
+
+  background: #04aa6d;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.headerText {
+  width: 84px;
+  height: 24px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 24px;
+
+  /* identical to box height, or 160% */
+  display: flex;
+  align-items: center;
+
+  color: #ffffff;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+#even {
+  background: #e7e9eb;
+}
+#odd {
+  background: #ffffff;
+}
+
+.viewDetailsbtn {
+  width: 37px;
+  height: 24px;
+  left: 1357px;
+  top: 6px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 24px;
+
+  /* identical to box height, or 160% */
+  display: flex;
+  align-items: center;
+
+  color: #3c67ff;
+}

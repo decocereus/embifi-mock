@@ -1,0 +1,85 @@
+.tableContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: inherit;
+
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+
+.details {
+  position: absolute;
+  width: 218.01px;
+  height: 68.27px;
+  left: 680px;
+  top: 267px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24.2234px;
+  line-height: 58px;
+  color: #000000;
+}
+
+.backarrow {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  background-color: red;
+}
+
+.boundingBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  left: 45px;
+  top: 113px;
+
+  background: #d9d9d9;
+}
+
+.table {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: absolute;
+  width: 558px;
+  height: 218px;
+  left: calc(50% - 558px / 2 + 0.5px);
+  top: 368px;
+}
+
+.row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  height: 51.61px;
+  left: 463px;
+  top: 476.27px;
+}
+
+.rowElement {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28.6277px;
+  line-height: 44px;
+  color: #000000;
+}
+
+.columnElement {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26.4255px;
+  line-height: 44px;
+  color: #4d61fc;
+}
