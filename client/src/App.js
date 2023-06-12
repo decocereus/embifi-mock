@@ -7,6 +7,7 @@ import Login from "./Components/Forms/LoginScreen/Login";
 import Dashboard from "./Components/Dashboard/DashboardScreen/Dashboard";
 import UserDetails from "./Components/Dashboard/UserDetailsScreen/UserDetails";
 import Register from "./Components/Forms/RegisterLoanAppScreen/RegisterLoanApp";
+import Welcome from "./Components/Welcome-Splash/Welcome";
 
 /** root routes */
 const router = createBrowserRouter([
@@ -19,17 +20,17 @@ const router = createBrowserRouter([
     element: <Dashboard />,
   },
   {
-    path: "/dashboard/register",
-    element: <Register />,
+    path: "/dashboard/welcome",
+    element: <Welcome/>,
   },
   {
     path: "/dashboard/viewuser",
     element: <UserDetails/>,
   },
-  // {
-  //   path: "/dashboard/register/form",
-  //   element: <div>dashboard register for loan form route</div>,
-  // },
+  {
+    path: "/dashboard/welcome/registerform",
+    element: <Register />,
+  },
   // {
   //   path: "/dashboard/register/avialableLoans",
   //   element: <div>view available loans route</div>,

@@ -1,0 +1,125 @@
+.globalContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: black;
+}
+
+.welcomeContainer {
+  width: 360px;
+  height: 800px;
+  border: 1px solid red;
+  background: #ffffff;
+}
+
+.tagLineImgContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 252.51px;
+  height: 226.59px;
+  top: 195px;
+  left: 50px;
+}
+
+.tagline {
+  width: 249px;
+  height: 27px;
+  left: 54px;
+  top: 440px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 26px;
+  text-align: center;
+
+  color: #4d6cb5;
+}
+
+.groupPicture {
+  width: 252.51px;
+  height: 206.59px;
+}
+
+.perksContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-around;
+  top: 295px;
+  height: 150px;
+}
+
+.headingImgContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 90px;
+}
+
+.heading1 {
+  position: relative;
+  left: 15px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 26px;
+  text-align: center;
+  color: #4d6cb5;
+}
+
+.heading2 {
+  position: relative;
+  left: 3px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 26px;
+  text-align: center;
+  color: #4d6cb5;
+}
+
+.checkmark1 {
+  position: relative;
+  left: 39px;
+  width: 29px;
+  height: 29px;
+  border: 1px solid red;
+}
+.checkmark2 {
+  position: relative;
+  left: 35.75px;
+  width: 29px;
+  height: 29px;
+  border: 1px solid red;
+}
+
+.hand {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  left: -26px;
+  border: 1px solid red;
+}
+
+.document {
+  position: relative;
+  width: 81.6px;
+  height: 64px;
+  border: 1px solid red;
+}
+
+.splashButton {
+    position: relative;
+    top:320px;
+    left: 50px;
+}
