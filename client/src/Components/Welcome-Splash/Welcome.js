@@ -16,6 +16,8 @@ export default function Welcome() {
     setTimeout(() => setLoading(false), 2000);
   }, []);
 
+  console.log(checkmark, hand, document);
+
   return (
     <>
       {loading === false ? (
@@ -31,7 +33,7 @@ export default function Welcome() {
                 <div className="headingImgContainer">
                   <image
                     className="checkmark1"
-                    src="../../assets/checkmark.png"
+                    src= {checkmark}
                     alt="checkmark"
                   />
                   <h2 className="heading1"> Minimal documentation </h2>

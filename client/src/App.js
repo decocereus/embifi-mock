@@ -6,8 +6,10 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "./Components/Forms/LoginScreen/Login";
 import Dashboard from "./Components/Dashboard/DashboardScreen/Dashboard";
 import UserDetails from "./Components/Dashboard/UserDetailsScreen/UserDetails";
-import Register from "./Components/Forms/RegisterLoanAppScreen/RegisterLoanApp";
 import Welcome from "./Components/Welcome-Splash/Welcome";
+import RegisterForm1 from "./Components/Forms/RegisterLoanAppScreen/RegisterForm1";
+import RegisterForm2 from "./Components/Forms/RegisterLoanAppScreen/RegisterForm2";
+
 
 /** root routes */
 const router = createBrowserRouter([
@@ -28,8 +30,12 @@ const router = createBrowserRouter([
     element: <UserDetails/>,
   },
   {
-    path: "/dashboard/welcome/registerform",
-    element: <Register />,
+    path: "/dashboard/welcome/registerform1",
+    element: <RegisterForm1 />,
+  },
+  {
+    path: "/dashboard/welcome/registerform2",
+    element: <RegisterForm2 />,
   },
   // {
   //   path: "/dashboard/register/avialableLoans",
