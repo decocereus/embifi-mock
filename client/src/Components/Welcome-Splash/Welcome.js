@@ -33,7 +33,7 @@ export default function Welcome() {
                 <div className="headingImgContainer">
                   <image
                     className="checkmark1"
-                    src= {checkmark}
+                    src={checkmark}
                     alt="checkmark"
                   />
                   <h2 className="heading1"> Minimal documentation </h2>
@@ -49,7 +49,9 @@ export default function Welcome() {
                   <image className="hand" src={hand} alt="hand" />
                 </div>
               </div>
-              <SplashButton text="Register for loan" />
+              <div className="welcomeBtn">
+                <SplashButton text="Register for loan" />
+              </div>
             </div>
           </div>
         </>

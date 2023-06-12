@@ -1,10 +1,22 @@
 import React from "react";
 import "./RegisterForm1.css";
 import MobileSignalTimeBar from "../../Common/MobileSignalTimeBar";
+import "../../Common/MobileSignalTimeBar.css";
 import InputField from "../../Common/InputField";
+import "../../Common/InputField.css";
 import SplashButton from "../../Common/SplashButton";
+import "../../Common/SplashButton.css";
+import DropdownMenu from "../../Common/DropdownMenu";
 
 export default function Register() {
+  const options = [
+    "Proprietorship",
+    "Partnership",
+    "Limited Liability Partnership (LLP)",
+    "Private Limited (Pvt Ltd)",
+    "None"
+  ];
+
   return (
     <>
       <div className="globalContainer">
@@ -34,7 +46,7 @@ export default function Register() {
                 <InputField
                   placeholder="Enter your Email ID"
                   label="Email ID"
-                  type="text"
+                  type="email"
                   required={false}
                 />
               </div>
@@ -47,9 +59,12 @@ export default function Register() {
                 required={true}
               />
             </div>
+            <div className="dropdownContainer">
+              <DropdownMenu options={options} label="Business Document"/>
+            </div>
           </div>
-          <div className="btn">
-            <SplashButton text="Proceed" />
+          <div className="registBtn">
+            <SplashButton text="Proceed"/>
           </div>
         </div>
       </div>
