@@ -8,9 +8,11 @@ export default function Splash() {
     <>
       <div className="globalContainer">
         <div className="splashContainer">
-          <MobileSignalTimeBar/>
+        <div className="mobileTimeSplash">
+            <MobileSignalTimeBar />
+          </div>
           <div className="logoTextContainer">
-            <h4 className="heading">Powered by</h4>
+            <h4 className="embifiHeading">Powered by</h4>
             <image className="embifiLogo" src={Vector} alt="" />
           </div>
         </div>

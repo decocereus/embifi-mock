@@ -9,6 +9,7 @@ import UserDetails from "./Components/Dashboard/UserDetailsScreen/UserDetails";
 import Welcome from "./Components/Welcome-Splash/Welcome";
 import RegisterForm1 from "./Components/Forms/RegisterLoanAppScreen/RegisterForm1";
 import RegisterForm2 from "./Components/Forms/RegisterLoanAppScreen/RegisterForm2";
+import LoanOffers from "./Components/Loans/LoanOffers";
 
 
 /** root routes */
@@ -34,13 +35,13 @@ const router = createBrowserRouter([
     element: <RegisterForm1 />,
   },
   {
-    path: "/dashboard/welcome/registerform2",
+    path: "/dashboard/welcome/registerform1/registerform2",
     element: <RegisterForm2 />,
   },
-  // {
-  //   path: "/dashboard/register/avialableLoans",
-  //   element: <div>view available loans route</div>,
-  // },
+  {
+    path: "/dashboard/welcome/registerform1/registerform2/viewloanoffers",
+    element: <LoanOffers/>,
+  },
   // {
   //   path: "/dashboard/register/avialableLoans/agreement",
   //   element: <div>view available loans route</div>,

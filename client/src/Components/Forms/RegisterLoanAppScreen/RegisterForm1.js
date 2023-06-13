@@ -63,8 +63,8 @@ export default function Register() {
               <DropdownMenu options={options} label="Business Document"/>
             </div>
           </div>
-          <div className="registBtn">
-            <SplashButton text="Proceed"/>
+          <div className="registerBtn1">
+            <SplashButton text="Proceed" isSelect = {false} isProceed = {true}/>
           </div>
         </div>
       </div>

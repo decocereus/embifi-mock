@@ -8,7 +8,7 @@
 
 .inputFieldHeader,
 .dropdownLabel {
-  width: 128px;
+  width: 90%;
   height: 17px;
 
   font-family: "IBM Plex Sans";
@@ -32,7 +32,7 @@
 }
 
 .requiredInputFieldHeader {
-  width: 128px;
+  width: 90%;
   height: 17px;
 
   font-family: "IBM Plex Sans";

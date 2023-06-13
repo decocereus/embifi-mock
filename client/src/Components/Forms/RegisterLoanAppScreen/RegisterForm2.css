@@ -1,0 +1,117 @@
+.globalContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.registerFormContainer2 {
+  width: 360px;
+  height: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid red;
+}
+.mobileTime2 {
+  position: relative;
+  left: -150px;
+  top: -40px;
+}
+
+.inputFieldsContainer2 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 80%;
+  width: 100%;
+  top: 30px;
+}
+
+.backButton {
+  position: relative;
+  left: -148px;
+  width: 32px;
+  height: 32px;
+  background-color: #191d23;
+}
+.backBtn {
+  width: 32px;
+  height: 32px;
+}
+
+.dropdownContainer2 {
+  position: relative;
+  top: 10px;
+  left: 15px;
+  height: 20%;
+  width: 90%;
+}
+
+.aadharcardNumber {
+  position: relative;
+  top: -100px;
+  left: 15px;
+  width: 100%;
+}
+
+.fileInputs {
+  position: relative;
+  top: -110px;
+  left: 15px;
+  width: 100%;
+}
+
+.sectionHeading {
+  width: 100%;
+  height: 20px;
+  position: relative;
+  top: -100px;
+  left: 139px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.heading {
+  position: relative;
+  left: -125px;
+  top: 0px;
+  width: 100%;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+
+  /* Neutral / 800 */
+  color: #191d23;
+}
+
+.buildingNumber {
+  position: relative;
+  top: -115px;
+  left: 15px;
+  width: 100%;
+}
+
+.pincodeTownContainer {
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+  top: -110px;
+  left: 17px;
+  width: 90%;
+}
+.pincode {
+  width: 70%;
+}
+.town {
+  width: 90%;
+}
+
+.state {
+  position: relative;
+  top: -110px;
+  left: 15px;
+}

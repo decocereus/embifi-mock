@@ -50,7 +50,7 @@ export default function Welcome() {
                 </div>
               </div>
               <div className="welcomeBtn">
-                <SplashButton text="Register for loan" />
+                <SplashButton text="Register for loan" isSelect = {false} isProceed = {false}/>
               </div>
             </div>
           </div>

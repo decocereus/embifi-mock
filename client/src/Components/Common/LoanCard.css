@@ -1,0 +1,105 @@
+.loanCardContainer {
+  height: 169px;
+  width: 95%;
+  background: #f8fafc;
+}
+
+.loanAmountAndTimeContainer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: relative;
+  top: 5px;
+}
+
+.loanInfoContainer {
+  display: flex;
+  align-self: flex-start;
+  justify-content: space-evenly;
+  position: relative;
+  left: 10px;
+}
+.loanInfoAmount {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 90%;
+}
+.loanInfoText {
+  display: flex;
+  width: 90%;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.loanInfoAmount,
+.loanInfoText {
+  position: relative;
+  top: 15px;
+}
+
+.loanAmount {
+  padding-left: 10px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 26px;
+
+  /* or 131% */
+  display: flex;
+  align-items: center;
+
+  color: #6c63ff;
+}
+
+.availableTime {
+  padding-right: 10px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 26px;
+
+  /* or 131% */
+  display: flex;
+  align-items: center;
+
+  color: #274384;
+}
+
+.interestRate {
+  position: relative;
+  top: 8px;
+  left: 10px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 26px;
+  color: #274384;
+}
+
+.selectBtn {
+  position: relative;
+  left: 10px;
+  top: 30px;
+  filter: drop-shadow(0px 8px 15px rgba(77, 108, 181, 0.45));
+}
+
+.totalInterest,
+.totalAmount,
+.totalInterestText,
+.totalAmountText {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 7px;
+  line-height: 13px;
+
+  /* or 187% */
+  display: flex;
+  align-items: center;
+
+  color: #3b4256;
+}
