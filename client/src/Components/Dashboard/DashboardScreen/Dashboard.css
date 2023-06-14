@@ -1,5 +1,3 @@
-
-
 .register {
   display: flex;
   flex-direction: row;
@@ -7,12 +5,13 @@
   padding: 10px;
   gap: 10px;
 
-  position: inherit;
+  position: relative;
+  top: -800px;
+  left: 1500px;
+  z-index: 1;
 
   width: 75px;
   height: 44px;
-  left: 1515px;
-  top: 161px;
 
   background: #abbeff;
   border-radius: 8px;
@@ -40,14 +39,6 @@
   flex-grow: 0;
 }
 
-.userDetailsContainer {
-  position: inherit;
-  width: 1258px;
-  height: 218px;
-  left: calc(50% - 1258px / 2 + 0.5px);
-  top: calc(50% - 118px / 2 - 29px);
-}
-
 .userDetailsTable {
   box-sizing: border-box;
 
@@ -56,22 +47,8 @@
   height: 218px;
   left: calc(50% - 1258px / 2 + 0.5px);
   top: 248px;
-
+  
   border: 1px solid #cccccc;
-}
-
-.userDetailRow {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: space-between;
-  padding: 11.5px 338.22px 11.5px 36px;
-
-  width: 1258px;
-  height: 47px;
-  background: #ffffff;
-  border-bottom: 1px solid #dddddd;
 }
 
 .headers {
@@ -79,8 +56,8 @@
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
-  padding: 11.5px 338.22px 11.5px 36px;
-
+  align-items: center;
+  padding-left: 10px;
   width: 1258px;
   height: 47px;
 
@@ -88,6 +65,21 @@
   flex: none;
   order: 1;
   flex-grow: 0;
+}
+
+.userDetailRow {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-left: 10px;
+
+  width: 1258px;
+  height: 47px;
+  background: #ffffff;
+  border-bottom: 1px solid #dddddd;
 }
 
 .headerText {

@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./RegisterForm2.css";
 import MobileSignalTimeBar from "../../Common/MobileSignalTimeBar";
 import "../../Common/MobileSignalTimeBar.css";
@@ -9,6 +10,17 @@ import "../../Common/SplashButton.css";
 import DropdownMenu from "../../Common/DropdownMenu";
 
 export default function Register() {
+
+  const navigate = useNavigate();
+
+  const backToRegisterForm = () => {
+    navigate("/registerform")
+  }
+
+  const viewLoanOffers = () => {
+    navigate("/viewloanoffers")
+  }
+
   const options = ["Udyog AADHAR", "None"];
 
   return (
@@ -19,7 +31,7 @@ export default function Register() {
             <MobileSignalTimeBar />
           </div>
           <div className="backButton">
-            <button className="backBtn">
+            <button className="backBtn" onClick={backToRegisterForm}>
               <img src="/assets/arrow_back.png" alt="arrow_back" />
             </button>
           </div>
@@ -91,7 +103,7 @@ export default function Register() {
             </div>
           </div>
           <div className="registerBtn2">
-            <SplashButton text="Proceed" isSelect = {false} isProceed = {true} />
+            <SplashButton text="Proceed" isSelect = {false} isProceed = {true} onClick = {viewLoanOffers}/>
           </div>
         </div>
       </div>

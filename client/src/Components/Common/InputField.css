@@ -181,10 +181,14 @@
   position: relative;
   top: 0px;
   left: 300px;
-  width: 8.5px;
-  height: 4.25px;
+  width: 18.5px;
+  height: 14.25px;
+}
 
-  /* System/Dark */
-  background: #3b4256;
+.up {
+  transform: rotate(180deg);
+}
+
+.down {
   transform: rotate(-180deg);
 }

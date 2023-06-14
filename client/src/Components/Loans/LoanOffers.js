@@ -1,10 +1,17 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import LoanCard from "../Common/LoanCard";
 import MobileSignalTimeBar from "../Common/MobileSignalTimeBar";
 import "./LoanOffers.css";
 import SplashButton from "../Common/SplashButton";
 
 export default function LoanOffers() {
+
+  const navigate = useNavigate();
+
+  const goToAgreement = () => {
+    navigate("/agreement")
+  }
   return (
     <>
       <div className="globalContainer">
@@ -57,7 +64,7 @@ export default function LoanOffers() {
             </div>
           </div>
           <div className="appSubmitBtn">
-            <SplashButton text = "Submit" isisSelect = {false} isProceed = {false}/>
+            <SplashButton text = "Submit" isisSelect = {false} isProceed = {false} onClick={goToAgreement}/>
           </div>
         </div>
       </div>

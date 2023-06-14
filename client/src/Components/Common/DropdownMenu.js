@@ -13,15 +13,14 @@ export default function DropdownMenu(props) {
     setSelectedOption(option);
     setIsOpen(false);
   };
-
-  console.log(props);
+  const arrowDirection = isOpen ? "up" : "down";
 
   return (
     <div className="dropdown">
       <label className="dropdownLabel">{props.label}</label>
       <div className="dropdownMenuContainer">
         <button className="dropdownToggle" onClick={toggleMenu}>
-            <image className="dropdownArrow" src = "/assets/dropdown.png" alt = 'dropdown' onClick={toggleMenu}/>
+            <img className={"dropdownArrow " + arrowDirection} src = "/assets/dropdown.png" alt = 'dropdown' onClick={toggleMenu}/>
           {selectedOption === "None" ?  "Select an option" : selectedOption}
         </button>
         {isOpen && (

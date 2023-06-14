@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Splash from "./Splash";
 import "./Welcome.css";
 import SplashButton from "../Common/SplashButton";
@@ -6,6 +7,11 @@ import MobileSignalTimeBar from "../Common/MobileSignalTimeBar";
 
 export default function Welcome() {
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
+
+  const registerForm = () => {
+    navigate("/registerform")
+  }
 
   useEffect(() => {
     setTimeout(() => setLoading(false), 2000);
@@ -44,7 +50,7 @@ export default function Welcome() {
                 </div>
               </div>
               <div className="welcomeBtn">
-                <SplashButton text="Register for loan" isSelect = {false} isProceed = {false}/>
+                <SplashButton text="Register for loan" isSelect = {false} isProceed = {false} onClick = {registerForm}/>
               </div>
             </div>
           </div>

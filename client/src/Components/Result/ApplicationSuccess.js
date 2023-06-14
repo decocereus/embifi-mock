@@ -1,9 +1,20 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import MobileSignalTimeBar from "../Common/MobileSignalTimeBar";
 import SplashButton from "../Common/SplashButton";
 import "./ApplicationSuccess.css";
 
 export default function ApplicationSuccess() {
+  const navigate = useNavigate();
+
+  const backToHome = () => {
+    navigate("/dashboard")
+  }
+
+  const backToLoanAgreement = () => {
+    navigate("/agreement")
+  }
+
   return (
     <div className="globalContainer">
       <div className="applicationSuccessContainer">
@@ -11,7 +22,7 @@ export default function ApplicationSuccess() {
           <MobileSignalTimeBar isWhite = {true}/>
         </div>
         <div className="backButtonHome">
-          <button className="backBtnHome">
+          <button className="backBtnHome" onClick = {backToLoanAgreement}>
             <img src="/assets/arrow_back.png" alt="arrow_back" />
           </button>
         </div>
@@ -23,7 +34,7 @@ export default function ApplicationSuccess() {
             </div>
           </div>
           <div className="backToHome">
-            <SplashButton text = "Back to Home" isWhite = {true} isSelect = {false} isProceed = {true} />
+            <SplashButton text = "Back to Home" isWhite = {true} isSelect = {false} isProceed = {true} onClick = {backToHome}/>
           </div>
       </div>
     </div>

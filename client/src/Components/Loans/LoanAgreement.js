@@ -1,41 +1,30 @@
 import React, { useState } from "react";
 import "./LoanAgreement.css";
+import { useNavigate } from "react-router-dom";
 import MobileSignalTimeBar from "../Common/MobileSignalTimeBar";
 import SplashButton from "../Common/SplashButton";
-import ApplicationSuccess from "../Result/ApplicationSuccess";
-import ApplicationReject from "../Result/ApplicationReject";
 
 export default function LoanAgreement() {
   const [isChecked, setIsChecked] = useState(false);
 
-  const [showNextScreen, setShowNextScreen] = useState(false);
-  const [showSuccess, setShowSuccess] = useState(false);
-  const [showReject, setShowReject] = useState(false);
-
-  const appValid = false;
 
   const toggleCheckBox = () => {
     setIsChecked(!isChecked);
   };
 
-  const handleNextScreen = () => {
-    const isSuccess = true;
-    if (!isChecked) {
-      alert("Please agreen to the terms and conditions");
-    } else if (!isSuccess && isChecked) {
-      setShowSuccess(false);
-      setShowReject(true);
-    } else {
-      setShowSuccess(true);
-      setShowReject(false);
-    }
-    setShowNextScreen(true);
-  };
+  const navigate = useNavigate();
+
+  const goToSuccess = () => {
+    navigate("/agreement/success")
+  }
+  const goToReject = () => {
+    navigate("/agreement/reject")
+  }
 
   return (
     <div className="globalContainer">
       <div className="agreementContainer">
-        <div className="mobileTime">
+        <div className="mobileTimeAgreement">
           <MobileSignalTimeBar />
         </div>
         <div className="loanOffersContainer">
@@ -118,7 +107,7 @@ export default function LoanAgreement() {
               text="Accept"
               isisSelect={false}
               isProceed={false}
-              onClick={handleNextScreen}
+              onClick={isChecked ? goToSuccess : goToReject}
             />
           </div>
           <div className="footerContainer">

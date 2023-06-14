@@ -1,17 +1,24 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const jwt = require("jsonwebtoken");
-const bcrypt = require("bcrypt");
-const bodyParser = require("body-parser");
+import express from "express";
+import mongoose from "mongoose";
+import jwt from "jsonwebtoken";
+import bcrypt from "bcrypt";
+import bodyParser from "body-parser";
+import cors from "cors";
 
 const app = express();
-const port = 3000;
+app.use(cors());
 
 // MongoDB connection
-mongoose.connect("mongodb://localhost/mydatabase", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+const CONNECTION_URL =
+  "mongodb+srv://admin:D8XTkBeMQfxrNipm@embifi-customers.2ko4rgb.mongodb.net/?retryWrites=true&w=majority";
+const PORT = 5000;
+
+mongoose
+  .connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() =>
+    app.listen(PORT, () => console.log("Server running on port", PORT))
+  )
+  .catch((err) => console.log(err.message));
 
 // Define a user schema
 const userSchema = new mongoose.Schema({
@@ -45,22 +52,31 @@ const userApplication = mongoose.model(
 app.use(bodyParser.json());
 
 // Login API
-app.post("/", async (req, res) => {
+app.post("/login", async (req, res) => {
   const { email, password } = req.body;
 
   try {
     // Find the user by email
-    const user = await User.findOne({ email });
+    let user = await User.findOne({ email });
 
+    // If user doesn't exist, create a new user
     if (!user) {
-      return res.status(404).json({ message: "User not found" });
-    }
+      // Create a new user
+      const hashedPassword = await bcrypt.hash(password, 10);
 
-    // Compare the password
-    const isPasswordValid = await bcrypt.compare(password, user.password);
+      user = new User({
+        email,
+        password: hashedPassword,
+      });
 
-    if (!isPasswordValid) {
-      return res.status(401).json({ message: "Invalid password" });
+      await user.save();
+    } else {
+      // Compare the password
+      const isPasswordValid = await bcrypt.compare(password, user.password);
+
+      if (!isPasswordValid) {
+        return res.status(401).json({ message: "Invalid password" });
+      }
     }
 
     // Generate a JWT
@@ -69,6 +85,7 @@ app.post("/", async (req, res) => {
     // Return the JWT
     res.json({ token });
   } catch (error) {
+    console.log(error)
     res.status(500).json({ message: "Internal server error" });
   }
 });

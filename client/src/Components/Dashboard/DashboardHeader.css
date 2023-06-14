@@ -1,11 +1,11 @@
-.globalContainer {
+.dashboardHeaderContainer {
     position: relative;
     width: 100vw;
     height: 100vh;
     background: #ffffff;
   }
   
-  .header {
+  .dashboardHeader {
     position: absolute;
     width: 100vw;
     height: 80px;

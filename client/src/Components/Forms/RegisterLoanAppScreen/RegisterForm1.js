@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./RegisterForm1.css";
 import MobileSignalTimeBar from "../../Common/MobileSignalTimeBar";
 import "../../Common/MobileSignalTimeBar.css";
@@ -9,6 +10,11 @@ import "../../Common/SplashButton.css";
 import DropdownMenu from "../../Common/DropdownMenu";
 
 export default function Register() {
+  const navigate = useNavigate();
+
+  const registerLoanApplicationForm = () => {
+    navigate("/registerformloanapplication")
+  }
   const options = [
     "Proprietorship",
     "Partnership",
@@ -64,7 +70,7 @@ export default function Register() {
             </div>
           </div>
           <div className="registerBtn1">
-            <SplashButton text="Proceed" isSelect = {false} isProceed = {true}/>
+            <SplashButton text="Proceed" isSelect = {false} isProceed = {true} onClick = {registerLoanApplicationForm}/>
           </div>
         </div>
       </div>
