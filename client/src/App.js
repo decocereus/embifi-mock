@@ -17,6 +17,11 @@ import ApplicationReject from "./Components/Result/ApplicationReject";
 
 /** root routes */
 const router = createBrowserRouter([
+
+  {
+    path: "/*",
+    element: <Login/>,
+  },
   {
     path: "/login",
     element: <Login />,
