@@ -1,0 +1,274 @@
+.globalContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.agreementContainer {
+  width: 360px;
+  height: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid red;
+}
+
+.mobileTime {
+  position: relative;
+  top: -170px;
+}
+
+.loanOffersContainer {
+  width: 95%;
+  height: 50%;
+  position: relative;
+  top: -70px;
+}
+
+.agreementHeadingContainer {
+  position: relative;
+  top: -60px;
+  padding-left: 10px;
+}
+
+.agreementHeading {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+
+  /* identical to box height */
+
+  color: #191d23;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.imageCollection {
+  width: 40%;
+  height: 40%;
+  position: relative;
+  left: 193px;
+  top: -10px;
+  z-index: 1;
+}
+
+.sprinkle1,
+.sprinkle2,
+.sprinkle3 {
+  width: 133px;
+  height: 134.19px;
+}
+
+.sprinkle1 {
+  position: relative;
+  top: -50px;
+  left: 20px;
+}
+
+.sprinkle2 {
+  position: relative;
+  top: -20px;
+  left: 15px;
+}
+
+.sprinkle3 {
+  position: relative;
+  top: -120px;
+  left: 10px;
+}
+
+.book {
+  width: 75px;
+  height: 103.18px;
+  transform: rotate(-9deg);
+  position: relative;
+  left: 55px;
+  top: -280px;
+}
+
+.summaryCard {
+  height: 239px;
+  background: #f8fafc;
+  border-radius: 4px;
+  position: relative;
+  top: -100px;
+}
+
+.summaryHeading {
+  position: relative;
+  top: 10px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 26px;
+  padding-left: 10px;
+
+  /* or 237% */
+
+  color: #000000;
+}
+
+.colHeading {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+
+  /* identical to box height, or 167% */
+
+  color: #4d61fc;
+}
+
+.rowInfo {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 20px;
+
+  /* identical to box height, or 154% */
+
+  color: #000000;
+}
+
+.summaryTable {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+
+  position: relative;
+  top: 25px;
+}
+
+.row {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 32px;
+}
+
+.userAccountDetailsContainer {
+  background: #f8fafc;
+  border-radius: 4px;
+  height: 126px;
+  position: relative;
+  top: -70px;
+}
+
+.userAccountDetailsHeading {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 26px;
+
+  /* or 218% */
+  padding-left: 10px;
+  color: #6765e8;
+}
+
+.userBankAccountDetailsContainer {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.userAccountName,
+.userAccountNumber,
+.userAccountIFSC,
+.userAccountBranch {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 9px;
+  line-height: 26px;
+
+  /* or 290% */
+
+  color: #838383;
+  padding-left: 10px;
+}
+
+.temsAndConditionsContiner {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  top: -55px;
+  left: 30px;
+  height: 24px;
+  width: 80%;
+}
+
+.checkbox {
+  background: #3b4256;
+  position: relative;
+  left: 20px;
+}
+
+.termsAndCondtionsHeading {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11.187px;
+  line-height: 150%;
+
+  /* identical to box height, or 17px */
+  letter-spacing: 0.01em;
+
+  /* Text / Secondary - Grey2 */
+  color: #6f7482;
+  width: 70%;
+}
+
+.finalBtn {
+  position: relative;
+  left: 40px;
+  top: -40px;
+}
+
+.footerContainer {
+  display: flex;
+  width: 50%;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  top: -20px;
+  left: 80px;
+}
+
+.footerContent {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 150%;
+
+  /* identical to box height, or 15px */
+  letter-spacing: 0.01em;
+
+  /* Text / Secondary - Grey2 */
+  color: #6f7482;
+}
+.lock {
+  width: 14.33px;
+  height: 15.7px;
+  position: relative;
+  left: 5px;
+}

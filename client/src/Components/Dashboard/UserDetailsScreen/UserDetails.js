@@ -1,6 +1,5 @@
 import React from "react";
 import DashboardHeader from "../DashboardHeader";
-import arrow_back from "../../../assets/arrow_back.png";
 import "./UserDetails.css";
 
 export default function UserDetails(user) {
@@ -10,7 +9,7 @@ export default function UserDetails(user) {
       <div className="tableContainer">
         <button>
         <div className="boundingBox">
-          <image className="backarrow" src={arrow_back} alt="arrow_back" />
+          <img className="backarrow" src="/assets/arrow_back.png" alt="arrow_back" />
         </div>
         </button>
         <div className="details">

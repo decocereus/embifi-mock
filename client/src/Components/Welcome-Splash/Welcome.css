@@ -92,14 +92,12 @@
   left: 39px;
   width: 29px;
   height: 29px;
-  border: 1px solid red;
 }
 .checkmark2 {
   position: relative;
   left: 35.75px;
   width: 29px;
   height: 29px;
-  border: 1px solid red;
 }
 
 .hand {
@@ -107,14 +105,13 @@
   width: 52px;
   height: 52px;
   left: -26px;
-  border: 1px solid red;
 }
 
 .document {
   position: relative;
   width: 81.6px;
   height: 64px;
-  border: 1px solid red;
+  left: -20px;
 }
 
 .welcomeBtn {

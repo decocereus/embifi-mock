@@ -4,11 +4,6 @@ import "./Welcome.css";
 import SplashButton from "../Common/SplashButton";
 import MobileSignalTimeBar from "../Common/MobileSignalTimeBar";
 
-import group from "../../assets/group.png";
-import checkmark from "../../assets/checkmark.png";
-import hand from "../../assets/hand.png";
-import document from "../../assets/document.png";
-
 export default function Welcome() {
   const [loading, setLoading] = useState(true);
 
@@ -16,7 +11,6 @@ export default function Welcome() {
     setTimeout(() => setLoading(false), 2000);
   }, []);
 
-  console.log(checkmark, hand, document);
 
   return (
     <>
@@ -26,27 +20,27 @@ export default function Welcome() {
             <div className="welcomeContainer">
               <MobileSignalTimeBar />
               <div className="tagLineImgContainer">
-                <img className="groupPicture" src={group} alt="group" />
+                <img className="groupPicture" src="/assets/group.png" alt="group" />
                 <h1 className="tagline">Get a Loan in just 2 minutes</h1>
               </div>
               <div className="perksContainer">
                 <div className="headingImgContainer">
-                  <image
+                  <img
                     className="checkmark1"
-                    src={checkmark}
+                    src="/assets/checkmark.png"
                     alt="checkmark"
                   />
                   <h2 className="heading1"> Minimal documentation </h2>
-                  <image className="document" src={document} alt="document" />
+                  <img className="document" src="/assets/document.png" alt="document" />
                 </div>
                 <div className="headingImgContainer">
-                  <image
+                  <img
                     className="checkmark2"
-                    src={checkmark}
+                    src="/assets/checkmark.png"
                     alt="checkmark"
                   />
                   <h2 className="heading2"> Zero prepayment charges </h2>
-                  <image className="hand" src={hand} alt="hand" />
+                  <img className="hand" src="/assets/hand.png" alt="hand" />
                 </div>
               </div>
               <div className="welcomeBtn">

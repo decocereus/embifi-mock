@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import dropdown from "../../assets/dropdown.png";
 import "./InputField.css";
 
 export default function DropdownMenu(props) {
@@ -22,7 +21,7 @@ export default function DropdownMenu(props) {
       <label className="dropdownLabel">{props.label}</label>
       <div className="dropdownMenuContainer">
         <button className="dropdownToggle" onClick={toggleMenu}>
-            <image className="dropdownArrow" src = {dropdown} alt = 'dropdown' onClick={toggleMenu}/>
+            <image className="dropdownArrow" src = "/assets/dropdown.png" alt = 'dropdown' onClick={toggleMenu}/>
           {selectedOption === "None" ?  "Select an option" : selectedOption}
         </button>
         {isOpen && (

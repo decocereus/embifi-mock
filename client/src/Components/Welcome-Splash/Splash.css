@@ -36,9 +36,8 @@
 
 .embifiLogo {
   position: relative;
-  top: 5px;
+  top: 15px;
   width: 131px;
   height: 40px;
   color: black;
-  border: 1px solid red;
 }

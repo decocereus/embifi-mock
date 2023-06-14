@@ -7,7 +7,6 @@ import "../../Common/InputField.css";
 import SplashButton from "../../Common/SplashButton";
 import "../../Common/SplashButton.css";
 import DropdownMenu from "../../Common/DropdownMenu";
-import arrow_back from "../../../assets/arrow_back.png";
 
 export default function Register() {
   const options = ["Udyog AADHAR", "None"];
@@ -21,7 +20,7 @@ export default function Register() {
           </div>
           <div className="backButton">
             <button className="backBtn">
-              <image src={arrow_back} alt="arrow_back" />
+              <img src="/assets/arrow_back.png" alt="arrow_back" />
             </button>
           </div>
           <div className="inputFieldsContainer2">
@@ -40,7 +39,7 @@ export default function Register() {
               <InputField
                 placeholder="Click here to upload/capture Udyog AADHAR"
                 label="Udyog AADHAR"
-                type="picture"
+                type="file"
                 required={true}
               />
             </div>
@@ -49,7 +48,7 @@ export default function Register() {
               <InputField
                 placeholder="Capture Business Site front photo with a sign board"
                 label="Business Site Photo"
-                type="picture"
+                type="file"
                 required={true}
               />
             </div>

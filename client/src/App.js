@@ -10,6 +10,7 @@ import Welcome from "./Components/Welcome-Splash/Welcome";
 import RegisterForm1 from "./Components/Forms/RegisterLoanAppScreen/RegisterForm1";
 import RegisterForm2 from "./Components/Forms/RegisterLoanAppScreen/RegisterForm2";
 import LoanOffers from "./Components/Loans/LoanOffers";
+import LoanAgreement from "./Components/Loans/LoanAgreement";
 
 
 /** root routes */
@@ -42,10 +43,10 @@ const router = createBrowserRouter([
     path: "/dashboard/welcome/registerform1/registerform2/viewloanoffers",
     element: <LoanOffers/>,
   },
-  // {
-  //   path: "/dashboard/register/avialableLoans/agreement",
-  //   element: <div>view available loans route</div>,
-  // },
+  {
+    path: "/dashboard/welcome/registerform1/registerform2/viewloanoffers/agreement",
+    element: <LoanAgreement/>,
+  },
 ]);
 
 export default function App() {
