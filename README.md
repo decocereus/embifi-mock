@@ -1,0 +1,11 @@
+# embifi-mock![Screenshot 2023-06-14 171139](https://github.com/decocereus/embifi-mock/assets/53113365/7dfef32a-7838-47af-b870-1e5750228556)
+![Screenshot 2023-06-14 171236](https://github.com/decocereus/embifi-mock/assets/53113365/242e7b32-eb2b-4077-a62a-919e37407f4b)
+![Screenshot 2023-06-14 171249](https://github.com/decocereus/embifi-mock/assets/53113365/731ae84b-befe-47a3-9ee3-7d1c729f94ae)
+![Screenshot 2023-06-14 171257](https://github.com/decocereus/embifi-mock/assets/53113365/1581ac06-360f-4abf-8dc1-dd3e229ee0f2)
+![Screenshot 2023-06-14 171303](https://github.com/decocereus/embifi-mock/assets/53113365/dbe9057f-cc93-4812-a8dc-1d06381fd12e)
+![Screenshot 2023-06-14 171312](https://github.com/decocereus/embifi-mock/assets/53113365/9fbfff82-0852-4c07-9823-326ab5e511c2)
+![Screenshot 2023-06-14 171321](https://github.com/decocereus/embifi-mock/assets/53113365/522125cc-c72d-4047-bd6a-cbd950555a60)
+![Screenshot 2023-06-14 171329](https://github.com/decocereus/embifi-mock/assets/53113365/0e4bfe4d-619f-42f4-9f08-82401333c8ca)
+![Screenshot 2023-06-14 171336](https://github.com/decocereus/embifi-mock/assets/53113365/dcfceb76-0961-49ad-8ed8-2d3ccaa05c1a)
+![Screenshot 2023-06-14 171345](https://github.com/decocereus/embifi-mock/assets/53113365/b14c9b10-d87a-4d85-bade-07dacd74695b)
+
