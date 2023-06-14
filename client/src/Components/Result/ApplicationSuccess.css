@@ -1,0 +1,68 @@
+.globalContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.applicationSuccessContainer {
+  width: 360px;
+  height: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid red;
+  background: #4d61fc;
+}
+
+.mobileTimeSuccess {
+  position: relative;
+  top: -210px;
+}
+
+.backButtonHome {
+  position: relative;
+  left: -156px;
+  width: 32px;
+  height: 32px;
+  top: -200px;
+}
+.backBtnHome {
+  width: 32px;
+  height: 32px;
+}
+
+.congratulationsContainer {
+  position: relative;
+  top: -30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.congratsText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.Congratualtions,
+.approved {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+
+  /* or 24px */
+  text-align: center;
+  letter-spacing: 0.01em;
+
+  color: #ffffff;
+}
+
+.backToHome {
+  position: relative;
+  top: 180px;
+}

@@ -5,7 +5,7 @@ const bcrypt = require("bcrypt");
 const bodyParser = require("body-parser");
 
 const app = express();
-const port = 5000;
+const port = 3000;
 
 // MongoDB connection
 mongoose.connect("mongodb://localhost/mydatabase", {
@@ -45,7 +45,7 @@ const userApplication = mongoose.model(
 app.use(bodyParser.json());
 
 // Login API
-app.post("/login", async (req, res) => {
+app.post("/", async (req, res) => {
   const { email, password } = req.body;
 
   try {
@@ -73,8 +73,22 @@ app.post("/login", async (req, res) => {
   }
 });
 
+// Function to generate a unique identifier number
+function generateIdentifierNumber() {
+  // Logic to generate a unique identifier number
+  // This can be a simple random number generation or a more complex algorithm
+
+  const randomNumber = Math.floor(Math.random() * 1000000) + 1; // Generate a random number between 1 and 1,000,000
+
+  const timestamp = Date.now(); // Get the current timestamp
+
+  const identifierNumber = `${randomNumber}${timestamp}`; // Combine the random number and timestamp
+
+  return identifierNumber;
+}
+
 // Register new user API
-app.post("/register", async (req, res) => {
+app.post("/registerformloanapplication", async (req, res) => {
   const {
     name,
     mobileNumber,
@@ -90,24 +104,39 @@ app.post("/register", async (req, res) => {
 
   try {
     // Check if the user already exists
-    const existingUser = await User.findOne({ aadharNumber });
+    const existingUser = await User.findOne({ mobileNumber });
 
     if (existingUser) {
-      return res.status(409).json({ message: "Application already exists" });
+      return res.status(409).json({ message: "User already exists" });
     }
 
-    // Hash the password
-    const hashedPassword = await bcrypt.hash(password, 10);
+    // Generate a unique identifier number for the user application
+    const identifierNumber = generateIdentifierNumber();
 
     // Create a new user
-    const newUser = new User({ email, password: hashedPassword });
+    const newUser = new User({
+      name,
+      mobileNumber,
+      dateOfBirth,
+      businessType,
+      businessDocument,
+      aadharNumber,
+      buildingNumber,
+      pincode,
+      city,
+      state,
+      identifierNumber,
+    });
     await newUser.save();
 
     // Generate a JWT
-    const token = jwt.sign({ email: newUser.email }, "secret-key");
+    const token = jwt.sign(
+      { aadharNumber: newUser.aadharNumber },
+      "secret-key"
+    );
 
-    // Return the JWT
-    res.json({ token });
+    // Return the JWT and identifier number
+    res.json({ token, identifierNumber });
   } catch (error) {
     res.status(500).json({ message: "Internal server error" });
   }

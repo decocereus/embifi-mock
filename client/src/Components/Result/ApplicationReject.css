@@ -1,0 +1,51 @@
+.globalContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.applicationRejectContainer {
+  width: 360px;
+  height: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid red;
+}
+
+.mobileTime {
+  position: relative;
+  left: -150px;
+  top: -245px;
+}
+
+.rejectContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  position: relative;
+  top: -20px;
+  width: 90%;
+  height: 30%;
+}
+
+.rejection {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 20px;
+
+  /* identical to box height, or 62% */
+  text-align: center;
+  letter-spacing: -0.5px;
+
+  color: #000000;
+}
+
+.rejectImg {
+  width: 229px;
+  height: 173.47px;
+}

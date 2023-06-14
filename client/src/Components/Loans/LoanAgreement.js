@@ -1,20 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import "./LoanAgreement.css";
 import MobileSignalTimeBar from "../Common/MobileSignalTimeBar";
 import SplashButton from "../Common/SplashButton";
-import ApplicationSuccess from "../Result/ApplicationSuccess"
-import ApplicationReject from "../Result/ApplicationReject"
+import ApplicationSuccess from "../Result/ApplicationSuccess";
+import ApplicationReject from "../Result/ApplicationReject";
 
 export default function LoanAgreement() {
+  const [isChecked, setIsChecked] = useState(false);
 
-  const appValid = false
-  const componentToRender = () => {
-    if (appValid) {
-      return <ApplicationSuccess/>
+  const [showNextScreen, setShowNextScreen] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [showReject, setShowReject] = useState(false);
+
+  const appValid = false;
+
+  const toggleCheckBox = () => {
+    setIsChecked(!isChecked);
+  };
+
+  const handleNextScreen = () => {
+    const isSuccess = true;
+    if (!isChecked) {
+      alert("Please agreen to the terms and conditions");
+    } else if (!isSuccess && isChecked) {
+      setShowSuccess(false);
+      setShowReject(true);
     } else {
-      return <ApplicationReject/>
+      setShowSuccess(true);
+      setShowReject(false);
     }
-  }
+    setShowNextScreen(true);
+  };
+
   return (
     <div className="globalContainer">
       <div className="agreementContainer">
@@ -86,16 +103,26 @@ export default function LoanAgreement() {
             </div>
           </div>
           <div className="temsAndConditionsContiner">
-            <input className="checkbox" type = "checkbox"/>
+            <input
+              className="checkbox"
+              type="checkbox"
+              onClick={toggleCheckBox}
+            />
             <h4 className="termsAndCondtionsHeading">
-                I understand and agree to all the <span className="specialTerms">T&C's.</span>
+              I understand and agree to all the{" "}
+              <span className="specialTerms">T&C's.</span>
             </h4>
           </div>
           <div className="finalBtn">
-            <SplashButton text = "Accept"  isisSelect = {false} isProceed = {false} onClick = {componentToRender}/> 
+            <SplashButton
+              text="Accept"
+              isisSelect={false}
+              isProceed={false}
+              onClick={handleNextScreen}
+            />
           </div>
           <div className="footerContainer">
-            <img className = 'lock' src = '/assets/lock.png' alt = 'alt'/>
+            <img className="lock" src="/assets/lock.png" alt="alt" />
             <h3 className="footerContent">Your Information is safe with us.</h3>
           </div>
         </div>

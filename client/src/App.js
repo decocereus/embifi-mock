@@ -11,6 +11,8 @@ import RegisterForm1 from "./Components/Forms/RegisterLoanAppScreen/RegisterForm
 import RegisterForm2 from "./Components/Forms/RegisterLoanAppScreen/RegisterForm2";
 import LoanOffers from "./Components/Loans/LoanOffers";
 import LoanAgreement from "./Components/Loans/LoanAgreement";
+import ApplicationSuccess from "./Components/Result/ApplicationSuccess";
+import ApplicationReject from "./Components/Result/ApplicationReject";
 
 
 /** root routes */
@@ -24,7 +26,7 @@ const router = createBrowserRouter([
     element: <Dashboard />,
   },
   {
-    path: "/dashboard/welcome",
+    path: "/welcome",
     element: <Welcome/>,
   },
   {
@@ -32,20 +34,28 @@ const router = createBrowserRouter([
     element: <UserDetails/>,
   },
   {
-    path: "/dashboard/welcome/registerform1",
+    path: "/registerform",
     element: <RegisterForm1 />,
   },
   {
-    path: "/dashboard/welcome/registerform1/registerform2",
+    path: "/registerformloanapplication",
     element: <RegisterForm2 />,
   },
   {
-    path: "/dashboard/welcome/registerform1/registerform2/viewloanoffers",
+    path: "/viewloanoffers",
     element: <LoanOffers/>,
   },
   {
-    path: "/dashboard/welcome/registerform1/registerform2/viewloanoffers/agreement",
+    path: "/agreement",
     element: <LoanAgreement/>,
+  },
+  {
+    path: "/agreement/success",
+    element: <ApplicationSuccess/>,
+  },
+  {
+    path: "/agreement/reject",
+    element: <ApplicationReject/>,
   },
 ]);
 

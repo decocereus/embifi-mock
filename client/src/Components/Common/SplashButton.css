@@ -6,13 +6,22 @@
   padding: 6px 8px;
   gap: 4px;
 
-  background: #274384;
   border-radius: 4px;
 
   /* Inside auto layout */
   flex: none;
   order: 0;
   flex-grow: 1;
+}
+
+.default {
+  background: #274384;
+  color: #ffffff;
+}
+
+.white {
+  background: #ffffff;
+  color: #001eff;
 }
 
 .text {
@@ -24,13 +33,6 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 22px;
-
-  /* identical to box height */
-
-  /* Shades/White */
-  color: #ffffff;
-
-  /* Inside auto layout */
   flex: none;
   order: 0;
   flex-grow: 0;
