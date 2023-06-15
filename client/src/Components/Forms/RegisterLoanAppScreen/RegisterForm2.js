@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./RegisterForm2.css";
 import MobileSignalTimeBar from "../../Common/MobileSignalTimeBar";
@@ -10,16 +10,73 @@ import "../../Common/SplashButton.css";
 import DropdownMenu from "../../Common/DropdownMenu";
 
 export default function Register() {
-
   const navigate = useNavigate();
-
   const backToRegisterForm = () => {
-    navigate("/registerform")
-  }
+    navigate("/registerform");
+  };
 
-  const viewLoanOffers = () => {
-    navigate("/viewloanoffers")
-  }
+  const [loanApp, setLoanApp] = useState({
+    businessDocument: "",
+    aadharNumber: "",
+    buidlingNumber: "",
+    pincode: "",
+    city: "",
+    state: "",
+  });
+  
+  const [dropDownOpen, setDropDownOpen] = useState(false)
+
+  const dropDownIsOpen = dropDownOpen ?  "close" :  "open"
+
+  const setBusinessDocument = (option) => {
+    setLoanApp({ ...loanApp, businessDocument: option });
+  };
+  const setAadharNumber = (e) => {
+    setLoanApp({ ...loanApp, aadharNumber: e.target.value });
+  };
+  const setBuildingNumber = (e) => {
+    setLoanApp({ ...loanApp, buidlingNumber: e.target.value });
+  };
+  const setPincdoe = (e) => {
+    setLoanApp({ ...loanApp, pincode: e.target.value });
+  };
+  const setCity = (e) => {
+    setLoanApp({ ...loanApp, city: e.target.value });
+  };
+  const setState = (e) => {
+    setLoanApp({ ...loanApp, state: e.target.value });
+  };
+
+  const handleLoanApplication = async () => {
+    try {
+      const response = await fetch(
+        "http://localhost:5000/registerformloanapplication",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(loanApp),
+        }
+      );
+
+      const data = await response.json();
+
+      if (response.ok) {
+        // Loan application registered successfully
+        // Reset form fields
+        navigate("/viewloanoffers");
+      } else {
+        // Error occurred while registering loan application
+        alert("An error occurred while registering the loan application.");
+        //navigate("/");
+      }
+    } catch (error) {
+      alert("An error occurred. Please try again later.");
+      console.log(error);
+      //navigate("/");
+    }
+  };
 
   const options = ["Udyog AADHAR", "None"];
 
@@ -36,8 +93,13 @@ export default function Register() {
             </button>
           </div>
           <div className="inputFieldsContainer2">
-            <div className="dropdownContainer2">
-              <DropdownMenu options={options} label="Business Document" />
+            <div className={"dropdownContainer2 " + dropDownIsOpen}>
+              <DropdownMenu
+                options={options}
+                label="Business Document"
+                onChange={setBusinessDocument}
+                isDropDownOpen = {setDropDownOpen}
+              />
             </div>
             <div className="aadharcardNumber">
               <InputField
@@ -45,6 +107,7 @@ export default function Register() {
                 label="Udyog AADHAR Number"
                 type="text"
                 required={true}
+                onChange={setAadharNumber}
               />
             </div>
             <div className="fileInputs">
@@ -73,6 +136,7 @@ export default function Register() {
                 label="Building Number & Area"
                 type="text"
                 required={true}
+                onChange={setBuildingNumber}
               />
             </div>
             <div className="pincodeTownContainer">
@@ -82,6 +146,7 @@ export default function Register() {
                   label="Pincode"
                   type="text"
                   required={true}
+                  onChange={setPincdoe}
                 />
               </div>
               <div className="town">
@@ -90,6 +155,7 @@ export default function Register() {
                   label="Town/City"
                   type="text"
                   required={true}
+                  onChange={setCity}
                 />
               </div>
             </div>
@@ -99,11 +165,17 @@ export default function Register() {
                 label="State"
                 type="text"
                 required={true}
+                onChange={setState}
               />
             </div>
           </div>
           <div className="registerBtn2">
-            <SplashButton text="Proceed" isSelect = {false} isProceed = {true} onClick = {viewLoanOffers}/>
+            <SplashButton
+              text="Proceed"
+              isSelect={false}
+              isProceed={true}
+              onClick={handleLoanApplication}
+            />
           </div>
         </div>
       </div>

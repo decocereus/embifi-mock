@@ -7,11 +7,14 @@ export default function DropdownMenu(props) {
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+    props.isDropDownOpen(isOpen)
   };
 
   const selectOption = (option) => {
+    props.onChange(option)
     setSelectedOption(option);
     setIsOpen(false);
+    props.isDropDownOpen(isOpen)
   };
   const arrowDirection = isOpen ? "up" : "down";
 

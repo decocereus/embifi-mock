@@ -10,7 +10,7 @@ app.use(cors());
 
 // MongoDB connection
 const CONNECTION_URL =
-  "mongodb+srv://admin:D8XTkBeMQfxrNipm@embifi-customers.2ko4rgb.mongodb.net/?retryWrites=true&w=majority";
+  "mongodb+srv://admin-embifi:rbym1F9SEVCDN5zq@embifi-mock.zzu8t2l.mongodb.net/?retryWrites=true&w=majority";
 const PORT = 5000;
 
 mongoose
@@ -20,18 +20,8 @@ mongoose
   )
   .catch((err) => console.log(err.message));
 
-// Define a user schema
-const userSchema = new mongoose.Schema({
-  email: String,
-  password: String,
-});
-
-const userApplicationSchema = new mongoose.Schema({
-  name: String,
-  mobileNumber: String,
-  emailID: String,
-  dateOfBirth: Date,
-  businessType: String,
+const loanApplicationSchema = new mongoose.Schema({
+  identifierNumber: Number,
   businessDocument: String,
   aadharNumber: String,
   buildingNumber: String,
@@ -40,12 +30,21 @@ const userApplicationSchema = new mongoose.Schema({
   state: String,
 });
 
-// Create a user model
-const User = mongoose.model("User", userSchema);
+const registerSchema = new mongoose.Schema({
+  name: String,
+  mobileNumber: String,
+  emailId: String,
+  dateOfBirth: Date,
+  password: String,
+  businessType: String,
+  identifierNumber: Number,
+});
 
-const userApplication = mongoose.model(
-  "UserApplication",
-  userApplicationSchema
+// Create a user model
+const RegisterUser = mongoose.model("RegisterUser", registerSchema);
+const LoanApplication = mongoose.model(
+  "LoanApplication",
+  loanApplicationSchema
 );
 
 // Middleware for parsing JSON request bodies
@@ -56,36 +55,27 @@ app.post("/login", async (req, res) => {
   const { email, password } = req.body;
 
   try {
-    // Find the user by email
-    let user = await User.findOne({ email });
+    // Find the user by email 
+    let user = await  RegisterUser.findOne({ emailId: email });
 
-    // If user doesn't exist, create a new user
     if (!user) {
-      // Create a new user
-      const hashedPassword = await bcrypt.hash(password, 10);
+      return res.status(401).json({ message: "User does not exist" });
+    }
 
-      user = new User({
-        email,
-        password: hashedPassword,
-      });
+    // Compare the password
+    const isPasswordValid = bcrypt.compare(password, user.password);
 
-      await user.save();
-    } else {
-      // Compare the password
-      const isPasswordValid = await bcrypt.compare(password, user.password);
-
-      if (!isPasswordValid) {
-        return res.status(401).json({ message: "Invalid password" });
-      }
+    if (!isPasswordValid) {
+      return res.status(401).json({ message: "Invalid email or password" });
     }
 
     // Generate a JWT
-    const token = jwt.sign({ email: user.email }, "secret-key");
+    const token = jwt.sign({ email: user.emailId }, "secret-key");
 
     // Return the JWT
     res.json({ token });
   } catch (error) {
-    console.log(error)
+    console.log(error);
     res.status(500).json({ message: "Internal server error" });
   }
 });
@@ -105,50 +95,35 @@ function generateIdentifierNumber() {
 }
 
 // Register new user API
-app.post("/registerformloanapplication", async (req, res) => {
-  const {
-    name,
-    mobileNumber,
-    dateOfBirth,
-    businessType,
-    businessDocument,
-    aadharNumber,
-    buildingNumber,
-    pincode,
-    city,
-    state,
-  } = req.body;
+app.post("/registerform", async (req, res) => {
+  const { name, mobileNumber, emailId, dateOfBirth, password, businessType } =
+    req.body;
 
   try {
     // Check if the user already exists
-    const existingUser = await User.findOne({ mobileNumber });
+    const existingUser = await  RegisterUser.findOne({ mobileNumber });
 
     if (existingUser) {
       return res.status(409).json({ message: "User already exists" });
     }
 
-    // Generate a unique identifier number for the user application
     const identifierNumber = generateIdentifierNumber();
 
     // Create a new user
-    const newUser = new User({
+    const newUser = new RegisterUser({
       name,
       mobileNumber,
+      emailId,
       dateOfBirth,
+      password,
       businessType,
-      businessDocument,
-      aadharNumber,
-      buildingNumber,
-      pincode,
-      city,
-      state,
       identifierNumber,
     });
     await newUser.save();
 
     // Generate a JWT
     const token = jwt.sign(
-      { aadharNumber: newUser.aadharNumber },
+      { identifierNumber: newUser.identifierNumber },
       "secret-key"
     );
 
@@ -159,31 +134,76 @@ app.post("/registerformloanapplication", async (req, res) => {
   }
 });
 
-// Dashboard data API
-app.get("/dashboard", (req, res) => {
-  // Verify the JWT
-  const token = req.headers.authorization;
+// Register new user loan application API
+app.post("/registerformloanapplication", async (req, res) => {
+  const {
+    businessDocument,
+    aadharNumber,
+    buildingNumber,
+    pincode,
+    city,
+    state,
+  } = req.body;
 
-  if (!token) {
-    return res.status(401).json({ message: "Authorization header missing" });
-  }
+  try {
+    // Check if the user already exists
+    const existingUser = await  RegisterUser.findOne({ aadharNumber });
 
-  jwt.verify(token, "secret-key", (err, decoded) => {
-    if (err) {
-      return res.status(401).json({ message: "Invalid token" });
+    if (existingUser) {
+      return res.status(409).json({ message: "User already exists" });
     }
 
-    // Retrieve the user's loan application data from the database
+    // Generate a unique identifier number for the user application
+    const identifierNumber = generateIdentifierNumber();
+
+    // Create a new loan application
+    const newLoanApplication = new LoanApplication({
+      identifierNumber,
+      businessDocument,
+      aadharNumber,
+      buildingNumber,
+      pincode,
+      city,
+      state,
+    });
+    await newLoanApplication.save();
+
+    // Return the identifier number
+    res.json({ identifierNumber });
+  } catch (error) {
+    res.status(500).json({ message: "Internal server error" });
+  }
+});
+
+// Dashboard data API
+app.get("/dashboard", async (req, res) => {
+  try {
+    // Verify the JWT
+    const token = req.headers.authorization;
+
+    if (!token) {
+      return res.status(401).json({ message: "Authorization header missing" });
+    }
+
+    const decoded = jwt.verify(token, "secret-key");
+
+    // Retrieve the user's data from the database based on the email
+    const user = await RegisterUser.findOne({ emailId: decoded.email });
+
+    if (!user) {
+      return res.status(401).json({ message: "User not found" });
+    }
+
+    // Extract the required fields from the user object
     const userData = {
-      email: decoded.email,
-      loanApplications: [
-        // Fetch loan applications from the database
-        // You can use the user's email to query the loan applications associated with that user
-      ],
+      name: user.name,
+      mobileNumber: user.mobileNumber,
+      businessType: user.businessType,
     };
 
     res.json(userData);
-  });
+  } catch (error) {
+    res.status(500).json({ message: "Internal server error" });
+  }
 });
 
-//

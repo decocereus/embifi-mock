@@ -11,6 +11,7 @@ export default function InputField(props) {
             className="inputField"
             required={props.required}
             placeholder={props.placeholder}
+            onChange = {props.onChange}
           />
         </label>
       </div>

@@ -7,7 +7,6 @@ import SplashButton from "../Common/SplashButton";
 export default function LoanAgreement() {
   const [isChecked, setIsChecked] = useState(false);
 
-
   const toggleCheckBox = () => {
     setIsChecked(!isChecked);
   };
@@ -15,11 +14,11 @@ export default function LoanAgreement() {
   const navigate = useNavigate();
 
   const goToSuccess = () => {
-    navigate("/agreement/success")
-  }
+    navigate("/agreement/success");
+  };
   const goToReject = () => {
-    navigate("/agreement/reject")
-  }
+    navigate("/agreement/reject");
+  };
 
   return (
     <div className="globalContainer">

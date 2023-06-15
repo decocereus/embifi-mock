@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
@@ -10,29 +9,39 @@ export default function Login() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    // 
+    try {
+      const response = await fetch("http://localhost:5000/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
 
-    if (email !== "" && password !== ""){
-      try {
-        // Make a POST request to the login API endpoint
-        const response = await axios.post("http://localhost:5000/login", {
-          email,
-          password,
-        });
-  
-        // Assuming the API returns a token in the response
-        const { token } = response.data;
-  
-        // Store the token in local storage or state for later use
+      const data = await response.json();
+
+      if (response.ok) {
+        // Login successful
+        // Redirect to the dashboard or perform any other desired actions
+        const token = data.token;
         localStorage.setItem("token", token);
-  
-        // Redirect to the dashboard or perform any other action
         navigate("/dashboard")
-      } catch (error) {
-        console.error(error);
-        // Handle the error, display a message, etc.
+        console.log("Login successful");
+      } else if (response.status === 401) {
+        // Invalid email or password
+        alert("Invalid email or password or please register first");
+        //navigate("/")
+      } else if (response.status === 409) {
+        // User needs to register
+        alert("Please register first");
+      } else {
+        // Other error occurred
+        alert("An error occurred. Please try again later.");
       }
-    } else {
-      alert("Please add email and password")
+    } catch (error) {
+      console.log(error);
+      alert("An error occurred. Please try again later.");
     }
   };
 

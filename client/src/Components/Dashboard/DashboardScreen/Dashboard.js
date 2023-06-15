@@ -5,30 +5,40 @@ import "./Dashboard.css";
 
 export default function Dashboard() {
   const navigate = useNavigate();
-  // const [userData, setUserData] = useState([]);
+  const [userData, setUserData] = useState(null);
 
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
+  useEffect(() => {
+    // Fetch user data from the backend API
+    const fetchUserData = async () => {
+      try {
+        const response = await fetch("http://localhost:5000/dashboard", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        });
 
-  // const fetchData = async () => {
-  //   const token = localStorage.getItem('token');
-  //   try {
-  //     const response = await fetch('http://localhost:5000/dashboard', {
-  //       headers: {
-  //         Authorization: `Bearer ${token}`, // Replace with your JWT token
-  //         'Content-Type': 'application/json',
-  //       },
-  //     });
-  //     if (!response.ok) {
-  //       throw new Error('Request failed with status ' + response.status);
-  //     }
-  //     const data = await response.json();
-  //     setUserData(data);
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
+        if (response.ok) {
+          const data = await response.json();
+          setUserData(data);
+        } else if (response.status === 401) {
+          // Unauthorized access
+          alert("Unauthorized access. Please log in.");
+          // Redirect to the login page or perform any other desired actions
+        } else {
+          // Other error occurred
+          alert("An error occurred. Please try again later.");
+        }
+      } catch (error) {
+        console.log(error);
+        alert("An error occurred. Please try again later.");
+      }
+    };
+
+    fetchUserData();
+    console.log(userData)
+  }, []);
 
   const register = () => {
     navigate("/welcome");
