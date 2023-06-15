@@ -12,10 +12,11 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border: 1px solid red;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
-.mobileTime {
+.mobileTimeLoanOffers {
   position: relative;
   left: -150px;
   top: -50px;

@@ -11,12 +11,12 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border: 1px solid red;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 .mobileTime2 {
   position: relative;
   left: -150px;
-  top: -40px;
+  top: -35px;
 }
 
 .inputFieldsContainer2 {
@@ -29,11 +29,13 @@
   top: 30px;
 }
 
+
 .backButton {
   position: relative;
   left: -148px;
   width: 32px;
   height: 32px;
+  
 }
 .backBtn {
   width: 32px;
@@ -46,6 +48,7 @@
   left: 15px;
   height: 20%;
   width: 90%;
+  z-index: 1;
 }
 
 .aadharcardNumber {
@@ -113,4 +116,8 @@
   position: relative;
   top: -110px;
   left: 15px;
+}
+
+.registerBtn2 {
+  position: relative;
 }

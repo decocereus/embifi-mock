@@ -16,7 +16,7 @@ export default function LoanOffers() {
     <>
       <div className="globalContainer">
         <div className="loanOfferContainer">
-          <div className="mobileTime">
+          <div className="mobileTimeLoanOffers">
             <MobileSignalTimeBar />
           </div>
           <div className="loanCardsContainer">

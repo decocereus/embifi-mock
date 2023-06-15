@@ -11,7 +11,6 @@ export default function Dashboard() {
   //   fetchData();
   // }, []);
 
-
   // const fetchData = async () => {
   //   const token = localStorage.getItem('token');
   //   try {
@@ -32,14 +31,14 @@ export default function Dashboard() {
   // };
 
   const register = () => {
-    navigate("/welcome")
-  }
+    navigate("/welcome");
+  };
 
   const viewCustomer = () => {
     navigate("/dashboard/viewuser");
-  }
+  };
 
-    const items = [
+  const items = [
     { name: "Anom", age: 19, gender: "Male" },
     { name: "Megha", age: 19, gender: "Female" },
     { name: "Subham", age: 25, gender: "Male" },
@@ -47,15 +46,17 @@ export default function Dashboard() {
 
   return (
     <>
-      <DashboardHeader />
-      <div className="userDetailsContainer">
-        <div className="register">
-          <button className="registerbtn" onClick={register}>
-            Register
-          </button>
+      <div className="dashboardGlobalContainer">
+        <div className="dashboardHeader">
+          <DashboardHeader />
         </div>
-        <table className="userDetailsTable">
-          <tbody>
+        <div className="userDetailsTableBtnContainer">
+          <div className="register">
+            <button className="registerbtn" onClick={register}>
+              Register
+            </button>
+          </div>
+          <table className="userDetailsTable">
             <tr className="headers">
               <th className="headerText">Name</th>
               <th className="headerText">Mobile.No</th>
@@ -70,15 +71,15 @@ export default function Dashboard() {
                   <td>{user.mobileNumber ? user.mobileNumber : "-"}</td>
                   <td>{user.businessType ? user.businessType : "-"}</td>
                   <td>
-                    <button className="viewDetailsbtn" onClick = {viewCustomer} >
+                    <button className="viewDetailsbtn" onClick={viewCustomer}>
                       View
                     </button>
                   </td>
                 </tr>
               );
             })}
-          </tbody>
-        </table>
+          </table>
+        </div>
       </div>
     </>
   );

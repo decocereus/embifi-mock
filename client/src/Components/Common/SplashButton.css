@@ -24,6 +24,11 @@
   color: #001eff;
 }
 
+.special {
+  background: rgb(6, 241, 45);
+  color: rgb(251, 252, 252);
+}
+
 .text {
   width: 100%;
   height: 22px;

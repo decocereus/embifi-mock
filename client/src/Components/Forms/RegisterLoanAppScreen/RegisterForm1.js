@@ -13,22 +13,22 @@ export default function Register() {
   const navigate = useNavigate();
 
   const registerLoanApplicationForm = () => {
-    navigate("/registerformloanapplication")
-  }
+    navigate("/registerformloanapplication");
+  };
   const options = [
     "Proprietorship",
     "Partnership",
     "Limited Liability Partnership (LLP)",
     "Private Limited (Pvt Ltd)",
-    "None"
+    "None",
   ];
 
   return (
     <>
       <div className="globalContainer">
         <div className="registerFormContainer1">
-          <div className="mobileTime">
-            <MobileSignalTimeBar />
+          <div className="mobileTimeRegister1">
+            <MobileSignalTimeBar isWhite={false} />
           </div>
           <div className="inputFieldsContainer">
             <div className="name">
@@ -53,24 +53,39 @@ export default function Register() {
                   placeholder="Enter your Email ID"
                   label="Email ID"
                   type="email"
-                  required={false}
+                  required={true}
                 />
               </div>
             </div>
-            <div className="dob">
-              <InputField
-                placeholder="dd-mm-yyyy"
-                label="DOB"
-                type="Date"
-                required={true}
-              />
+            <div className="dobPasswordContainer">
+              <div className="dob">
+                <InputField
+                  placeholder="dd-mm-yyyy"
+                  label="DOB"
+                  type="Date"
+                  required={true}
+                />
+              </div>
+              <div className="password">
+                <InputField
+                  placeholder="Enter your password"
+                  label="Password"
+                  type="password"
+                  required={true}
+                />
+              </div>
             </div>
             <div className="dropdownContainer">
-              <DropdownMenu options={options} label="Business Document"/>
+              <DropdownMenu options={options} label="Business Document" />
             </div>
           </div>
           <div className="registerBtn1">
-            <SplashButton text="Proceed" isSelect = {false} isProceed = {true} onClick = {registerLoanApplicationForm}/>
+            <SplashButton
+              text="Proceed"
+              isSelect={false}
+              isProceed={true}
+              onClick={registerLoanApplicationForm}
+            />
           </div>
         </div>
       </div>

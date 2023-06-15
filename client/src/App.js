@@ -13,6 +13,7 @@ import LoanOffers from "./Components/Loans/LoanOffers";
 import LoanAgreement from "./Components/Loans/LoanAgreement";
 import ApplicationSuccess from "./Components/Result/ApplicationSuccess";
 import ApplicationReject from "./Components/Result/ApplicationReject";
+import Home from "./Components/Home/Home";
 
 
 /** root routes */
@@ -20,7 +21,7 @@ const router = createBrowserRouter([
 
   {
     path: "/*",
-    element: <Login/>,
+    element: <Home/>,
   },
   {
     path: "/login",
