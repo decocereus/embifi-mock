@@ -4,6 +4,7 @@ import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 import bodyParser from "body-parser";
 import cors from "cors";
+import jwt_decode from "jwt-decode";
 
 const app = express();
 app.use(cors());
@@ -185,7 +186,7 @@ app.get("/dashboard", async (req, res) => {
       return res.status(401).json({ message: "Authorization header missing" });
     }
 
-    const decoded = jwt.verify(token, "secret-key");
+    const decoded = jwt_decode(token);
 
     // Retrieve the user's data from the database based on the email
     const user = await RegisterUser.findOne({ emailId: decoded.email });
@@ -199,6 +200,40 @@ app.get("/dashboard", async (req, res) => {
       name: user.name,
       mobileNumber: user.mobileNumber,
       businessType: user.businessType,
+    };
+
+    res.json(userData);
+  } catch (error) {
+    res.status(500).json({ message: "Internal server error" });
+  }
+});
+
+app.get("/dashboard/viewuser", async (req, res) => {
+  try {
+    // Verify the JWT
+    const token = req.headers.authorization;
+
+    if (!token) {
+      return res.status(401).json({ message: "Authorization header missing" });
+    }
+
+    const decoded = jwt_decode(token);
+
+    // Retrieve the user's data from the database based on the email
+    const user = await RegisterUser.findOne({ emailId: decoded.email });
+
+    if (!user) {
+      return res.status(401).json({ message: "User not found" });
+    }
+    const loanAmount = Math.floor(Math.random() * 1000) + 1;
+    const date = user.dateOfBirth.toLocaleString().split(',')[0];
+    // Extract the required fields from the user object
+    const userData = {
+      name: user.name,
+      businessType: user.businessType,
+      loanAmount: loanAmount,
+      dateOfBirth: date,
+      mobileNumber: user.mobileNumber,
     };
 
     res.json(userData);
