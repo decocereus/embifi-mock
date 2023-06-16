@@ -12,7 +12,7 @@ app.use(cors());
 // MongoDB connection
 const CONNECTION_URL =
   "mongodb+srv://admin-embifi:rbym1F9SEVCDN5zq@embifi-mock.zzu8t2l.mongodb.net/?retryWrites=true&w=majority";
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 mongoose
   .connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
